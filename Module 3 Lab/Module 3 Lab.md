@@ -61,3 +61,6 @@ Now let’s talk about how you can access the data and functionality of GRASS in
 
 *GRASS Toolbar in QGIS*
 
+The GRASS Toolbar is separated in two sections.  The left section contains three buttons that manage the Mapsets.  Let’s discuss these three buttons first.
+
+- Open Mapset ![Open Mapset Button](figures/Open_Mapset_Button.png) - Opens the ‘Select GRASS Mapset’ dialog (shown in Figure 3) and allows you to set the Database (a.k.a. Gisdbase), Location, and Mapset for the current project.  When a Mapset is selected, all buttons on the GRASS Toolbar will be enabled.
