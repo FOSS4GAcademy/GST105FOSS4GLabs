@@ -63,4 +63,16 @@ Now let’s talk about how you can access the data and functionality of GRASS in
 
 The GRASS Toolbar is separated in two sections.  The left section contains three buttons that manage the Mapsets.  Let’s discuss these three buttons first.
 
-- Open Mapset ![Open Mapset Button](figures/Open_Mapset_Button.png) - Opens the ‘Select GRASS Mapset’ dialog (shown in Figure 3) and allows you to set the Database (a.k.a. Gisdbase), Location, and Mapset for the current project.  When a Mapset is selected, all buttons on the GRASS Toolbar will be enabled.
+- **Open Mapset** ![Open Mapset Button](figures/Open_Mapset_Button.png) - Opens the ‘Select GRASS Mapset’ dialog (shown in Figure 3) and allows you to set the Database (a.k.a. Gisdbase), Location, and Mapset for the current project.  When a Mapset is selected, all buttons on the GRASS Toolbar will be enabled.
+
+![Select GRASS Mapset Dialog](figures/Select_GRASS_Mapset_Dialog.png)
+
+*Select GRASS Mapset Dialog*
+
+- **New Mapset** ![New Mapset Button](figures/New_Mapset_Button.png) - Opens the ‘New Mapset’ wizard and walks you through the process of creating a new Mapset.
+- **Close Mapset** ![Close Mapset Button](figures/Close_Mapset_Button.png) - Closes the current Mapset.  Disables some buttons on the GRASS Toolbar.
+
+The second section of the GRASS Toolbar allows for adding, creating, and editing geographic data, as well as accessing GRASS tools, and viewing and setting the Region.  Let’s discuss each of these buttons in more detail.
+
+- **Add GRASS Vector Layer** ![Add GRASS Vector Layer Button](figures/Add_GRASS_Vector_Layer.png) - Opens the ‘Select GRASS Vector Layer’dialog and allows for adding a GRASS vector layer to the QGIS map canvas.  This button is enabled even if a Mapset is not currently opened.
+- **Add GRASS Raster Layer** ![Add GRASS Raster Layer Button](figures/Add_GRASS_Raster_Layer.png) - Opens the ‘Select GRASS Raster Layer’ dialog and allows for adding a GRASS raster layer to the QGIS map canvas.  This button is enabled even if a Mapset is not currently opened.
