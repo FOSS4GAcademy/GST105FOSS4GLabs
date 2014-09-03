@@ -63,7 +63,7 @@ The Reclass_ML contains five land cover types:
 
 7.	Right-click on Reclass_ML then choose ‘Histogram’ from the contextual menu.  This will open the Histogramming Tool (d.histogram) displaying how many instances of each cell value are contained in the raster map (shown in the figure below).
 
-![Histogramming Tool](/figures/Histogramming_Tool.png "Histogramming Tool")
+![Histogramming Tool](figures/Histogramming_Tool.png "Histogramming Tool")
 
 The value of each contains the unique land cover values that correspond to the individual land cover information classes.
 
@@ -97,25 +97,24 @@ In this task, we will open, review, and interpret the Kappa Report generated in 
 
 The first section (five lines in our case), shown in the figure below, display the header information identifying the title, location, date, mask, and input maps for the kappa analysis.
 
-![KappaReport Text](/figures/KappaReport_Text.png "KappaReport Text")
+![KappaReport Text](figures/KappaReport_Text.png "KappaReport Text")
 
 The second section (lines 7-24 in our case), shown in the figure below, displays the error matrix between Map1 (identified as AA_Sites_Raster in the header section) and Map2 (identified as Reclass_ML).
 
-![Error Matrix](/figures/Error_Matrix.png "Error Matrix")
+![Error Matrix](figures/Error_Matrix.png "Error Matrix")
 
 Let’s consider the error matrix for a moment (lines 9-16).  The columns are the reference data (the supervised classification we did by hand), while the rows are predicted classifications (classification done by the computer).  So, for example, if we look at the category 1 column, it reports that 168 cells were classified as category 1 when they were category 1 (so, classified correctly).  However, 1 cell was classified as category 2, when it was, in fact, category 1 (so, classified incorrectly).  Additionally, 42 cells were classified as category 4, when they were actually category 1 cells.
 
 If we sum the diagonal (168+44+271+42+30), we get 555, which represents the number of cells that were classified correctly.  If we sum the Col Sum (211+312+286+49+42), we get 900, which represents the total number of reference cells (all considered to be correctly classified).  So, if we divide the number of cells classified correctly, by the number of reference cells, we get 555/900 = .6166, which represents a 61.66% accuracy rating of the unsupervised classification.  This is reported in lines 36-37 in the report  (shown in the figure below).  Essentially, this is the overall accuracy measure from the kappa report. 
 
-![Observation Percentage Report](/figures/Observation_Percentage_Report.png "Observation Percentage Report")
+![Observation Percentage Report](figures/Observation_Percentage_Report.png "Observation Percentage Report")
 
 
 If we just stopped reading the report at the Observation Percentage section, we would be missing an important section that will explain where the classification is getting poor results.  If we understand where the classification is getting confused, we can, perhaps, improve our training data to improve the overall accuracy.
 
 Observe the Error Statistics section of our report (lines 26-34 in our report) shown in the figure below.
 
-![Error Statistics Section](/figures/Error_Statistics_Section.png "Error Statistics Section")
-
+![Error Statistics Section](figures/Error_Statistics_Section.png "Error Statistics Section")
 
 Consider the Percent Commission column (second column).  The percent commission reports what percentage of each class was confused with another class (i.e. misclassification percentage).  So, for example, class 4 (Forest) was confused with other classes 87.31% of the time!  Refer back to the Error Matrix section of the report (Figure 3) and look at the column for category 2 from Map1.  247 cells were mistakenly classified as class 4 (forest), when they were actually class 2 (Water).  Compared to the other classes, this percentage is very, very high, which explains a large percentage of our classification error. 
 
@@ -124,7 +123,6 @@ The Percent Omission column (third column) reports what percentage of each class
 The third column represents the estimated kappa coefficient. The kappa coefficient is a statistical measure of agreement between two different classifiers of the same data (in our case, how well the training dataset and supervised classification agreed in their classifications).  The kappa coefficient takes in to account to the agreement of classification versus the possibility that the agreement is just from sheer chance (both classifiers are just randomly guessing the classes).  If the classifiers completely agree on all classifications, then kappa would equal 1.  If the classifiers do not agree other than what would be expected by sheer chance, then kappa would equal 0.  So, in our case, the kappa coefficient is reported as 0.525067 in line 34 of the report.  This could be considered a moderate amount of agreement between the two classifiers, however, there is no universally agreed-upon range of values that would consider a kappa coefficient to be excellent, good, moderate, poor, or otherwise.  Therefore, when reviewing the kappa coefficient, you should also wholly consider the report when determining whether the classification is acceptable enough for your purposes.
 
 The remaining section of the report (lines 39-51) displays the category descriptions as provided in the raster maps.
-
 
 ### Task 4		Challenge: Improve the Supervised Classification
 

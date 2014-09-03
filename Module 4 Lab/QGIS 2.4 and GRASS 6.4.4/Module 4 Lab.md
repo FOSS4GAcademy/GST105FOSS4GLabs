@@ -90,7 +90,7 @@ In this task, we will rectify the SAC1_CIR.img image to the source SAC_13.sid im
 
 The figure below illustrates where we will focus on finding common features in both images.
 
-![Proposed Locations for Finding Common Features](/figures/Proposed_Locations.png "Proposed Locations for Finding Common Features")
+![Proposed Locations for Finding Common Features](figures/Proposed_Locations.png "Proposed Locations for Finding Common Features")
 
 
 1.	Use the Zoom and Pan tools in both the Georeferencer window and the QGIS window to zoom to the upper-left corner of both images denoted as Area 1 in the figure above.
@@ -98,36 +98,36 @@ The figure below illustrates where we will focus on finding common features in b
 	+ Note:  You will likely need to zoom very close to the feature found in each feature.  Examples of acceptable common features can include permanent features such as street corners, bases of flag poles, bases of buildings (not the roof tops), etc.  The goal is to try and find the exact location in each image.
 
 
-![Acceptable Common Reference Point Located](/figures/Acceptable_Common_Reference.png "Acceptable Common Reference Point Located")
+![Acceptable Common Reference Point Located](figures/Acceptable_Common_Reference.png "Acceptable Common Reference Point Located")
 
 3. With a  common reference point located, in the Georeferencer windows, click ‘Add Point’ button 
-![Add Point button](/figures/Add_Point_button.png "Add Point button").
+![Add Point button](figures/Add_Point_button.png "Add Point button").
 
 4. Click on the image to be referenced on the common reference point.  Try and be accurate and precise with your click.  When you click on the image, the ‘Enter map coordinates’ dialog will appear (shown below).
 
 5. Click ‘From map canvas’ button.  This will allow us to select a reference coordinate from the reference image rather than manually enter the coordinates.
 
-![Enter map coordinates Dialog](/figures/Enter_map_coordinates_Dialog.png "Enter map coordinates Dialog")
+![Enter map coordinates Dialog](figures/Enter_map_coordinates_Dialog.png "Enter map coordinates Dialog")
 
 6. Click on the exact same reference point location on the reference image on the QGIS map canvas.  Take care to click in the exact same location (or as close as you can get, resolution allowing).  When you do this, the ‘Enter map coordinates’ dialog will re-appear, but with the selected coordinates entered (see figure below for an example).
 
-![Map Coordinates Entered Based on Click in QGIS Map Canvas](/figures/Map_Coordinates_Entered.png "[Map Coordinates Entered Based on Click in QGIS Map Canvas")
+![Map Coordinates Entered Based on Click in QGIS Map Canvas](figures/Map_Coordinates_Entered.png "Map Coordinates Entered Based on Click in QGIS Map Canvas")
 
 7. Click OK to accept the coordinates.  When you do this, the Ground Control Point (GCP) table will populate with the created control point (shown in the figure below).
 
-![Map Coordinates Entered Based on Click in QGIS Map Canvas](/figures/Map_Coordinates_Entered_2.png "[Map Coordinates Entered Based on Click in QGIS Map Canvas")
+![Map Coordinates Entered Based on Click in QGIS Map Canvas](figures/Map_Coordinates_Entered_2.png "[Map Coordinates Entered Based on Click in QGIS Map Canvas")
 
 The GCP table will contain a list of all control points that you created.  If you wish to remove a control point, you can right-click on its entry in the table, then choose ‘Remove’ from the contextual menu.  If you wish to keep the control point, but not apply it to the rectification, you can unselect the on/off box in the first column.  Additionally, if you wish to manually change any of the values, double-click on the cell you wish to change to make it editable.  
 
 8. Repeat Steps 1-7 four more times to collect five control points.  Reference Figure 6 to determine where the areas where the control points should be located.  When you have completed this, you should have five points on both images, and five entries in your GCP table.  See the figure below for an example.
 
-![Five Control Points Located in Both Images](/figures/Five_Control_Points.png "[Five Control Points Located in Both Images")
+![Five Control Points Located in Both Images](figures/Five_Control_Points.png "Five Control Points Located in Both Images")
 
 ### Task 3 – Rectify the Image
 
 Now that you have your control points set, we will move on to rectifying the image to the selected control points. 
 
-1. To perform the rectification click the Start georeferencing   button ![Start georeferencing button ](/figures/Start_georeferencing_button.png "[Start georeferencing button") in the Georeferencer window.
+1. To perform the rectification click the Start georeferencing   button ![Start georeferencing button ](figures/Start_georeferencing_button.png "Start georeferencing button") in the Georeferencer window.
 2.	The Transformation settings window will open (see figure below). If beforehand you get a message saying ‘Please set transformation’ type click OK. 
 	+ In the Transformation window choose the Polynomial 1 as the Transformation type.
 	+ Choose Nearest neighbor as the Resampling method. This is the standard raster resampling method for discrete data such as a scanned map. 
@@ -137,15 +137,15 @@ Now that you have your control points set, we will move on to rectifying the ima
 	+ Click ‘Load in QGIS when done’.
 	+ Click OK to perform the rectification.
  
-![Transformation Settings](/figures/Transformation_Settings.png "[Transformation Settings")
+![Transformation Settings](figures/Transformation_Settings.png "Transformation Settings")
 
 When the rectification is performed, two things will happen. First, the rectified image will be added to the QGIS map canvas relative to the selected ground control points.  This is shown in the figure below.
 
-![Rectified Image](/figures/Rectified_Image.png "[Rectified Image")
+![Rectified Image](figures/Rectified_Image.png "Rectified Image")
 
 The second thing that happens when the image is rectified, is the residual values will appear in the GCP table in the Georeferencer window.  This is shown in the figure below.  The dX and dY columns report the different in location between the reference image and the rectified image in pixels.  The residual column reports the residual value for the control point.  Below the GCP table is the transformation (rectification) mean error.
 
-![Rectified Image 2](/figures/Rectified_Image_2.png "[Rectified Image 2")
+![Rectified Image 2](figures/Rectified_Image_2.png "Rectified Image 2")
 
 Ideally, you will try to obtain a residual value less than 0.5 pixel width or less than some small acceptable tolerance.  Additionally, ideally the mean error would be less than 2.0.
 
@@ -156,7 +156,7 @@ Notice that small changes and not “choosing the exact pixel” between the two
 ### Task 4 – Post-Rectification Steps
 With the image successfully rectified to an acceptable residual, there are a few cleanup steps left to complete the rectification process: save ground control points, and remove the rectified image’s white border.
 
-1.	In the Georeferencer window, click ‘Save GCP points as’ button ![Save GCP points](/figures/Save_GCP_Points.png "[Save GCP points") .  This will open a ‘Save GCP points’ dialog.
+1.	In the Georeferencer window, click ‘Save GCP points as’ button ![Save GCP points](figures/Save_GCP_Points.png "Save GCP points") .  This will open a ‘Save GCP points’ dialog.
 2.	Save the GCP points as SAC1_CIR.img.points in your lab directory.
 3.	Click File->Quit to close the Georeferencer window.
 
@@ -171,7 +171,7 @@ Next, we will remove the white border around the image for display purposes.
 8.	Click OK to set the no data value.  The white border will now be transparent.  
 	+ Note: Typically, these borders are either white (RGB:255) or black (RGB:0), so choose the appropriate no data value when needed.
 
-![No Data Value](/figures/No_Data_Value.png "[No Data Value")
+![No Data Value](figures/No_Data_Value.png "No Data Value")
 
 ### 4. Conclusion
 

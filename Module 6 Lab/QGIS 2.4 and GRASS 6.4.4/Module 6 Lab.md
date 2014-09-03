@@ -72,7 +72,7 @@ Let’s create the Location and Mapset.
 
 This will open the ‘Welcome to GRASS GIS’ window (shown in the figure below) and possibly a command prompt.  You can ignore the command prompt for this exercise.  We will use this Welcome window to create our new location.
 
-![Welcome to GRASS GIS Window](/figures/Welcome_to_GRASS_GIS_Window.png "Welcome to GRASS GIS Window")
+![Welcome to GRASS GIS Window](figures/Welcome_to_GRASS_GIS_Window.png "Welcome to GRASS GIS Window")
 
 2.	Click Browse button and navigate to the ‘Lab 6 Data’ folder that you extracted to your hard drive.
 3.	Create a new folder named ‘grassdata’ in your lab directory and select the new folder as the database.
@@ -85,7 +85,7 @@ This will open the ‘Welcome to GRASS GIS’ window (shown in the figure below)
 10.	Search for EPSG code 3309.  Select 3309 NAD27 / California Albers.  (Shown in figure below).
 
 
-![Choose EPSG Code 3309](/figures/Choose_EPSG_Code_3309.png "Choose EPSG Code 3309")
+![Choose EPSG Code 3309](figures/Choose_EPSG_Code_3309.png "Choose EPSG Code 3309")
 
 11.	Click Next to set the CRS.  The ‘Select datum transformation’ window will appear.
 12.	Choose ‘1: Used in whole nad27 region’ as the datum transformation.
@@ -97,7 +97,7 @@ This will open the ‘Welcome to GRASS GIS’ window (shown in the figure below)
 
 You should now have the Sacramento and two Mapsets created in the GIS Database (shown in the figure below).  We can now start  our GRASS GIS Project.
 
-![Sacramento Location and Two Mapsets](/figures/Sacramento_Location_and_Two_Mapsets.png "Sacramento Location and Two Mapsets")
+![Sacramento Location and Two Mapsets](figures/Sacramento_Location_and_Two_Mapsets.png "Sacramento Location and Two Mapsets")
 
 17.	Select ‘Classification’ from the Accessible mapsets list then click ‘Start GRASS’ button.  This will open the GRASS GUI.
 
@@ -115,12 +115,12 @@ In this task, we will import the raster file that we will perform a supervised c
 		+ tm_sacsub.img: checked
 	+ Add imported layers into layer tree: unchecked
 
-![Import raster data Options to Import](/figures/Import_raster_data_Options_to_Import.png "Import raster data Options to Import")
+![Import raster data Options to Import](figures/Import_raster_data_Options_to_Import.png "Import raster data Options to Import")
 
 3.	Click ‘Import’ button then click ‘Close’ button to close the dialog.
 4.	Select the Layer Manager window and select the ‘Command console’ tab if it is not already selected (shown in figure below). The console displays the results of the import function
 
-![Results of Raster Import Module Tool](/figures/Results_of_Raster_Import_Module_Tool.png "Results of Raster Import Module Tool")
+![Results of Raster Import Module Tool](figures/Results_of_Raster_Import_Module_Tool.png "Results of Raster Import Module Tool")
 
 Note that the tool imported six rasters; one raster for each raster band.  GRASS treats each band as a separate raster map.  Each band can be visualized separately, or, if desired, a composite can be created, such as the composite created in Lab 3 for this course.  
 
@@ -132,7 +132,7 @@ When we imported tm_sacsub, GRASS created a group for us named ‘tm_sacsub’. 
 6.	Enter ‘tm_sacsub_group’ as the group  name in the top dropdown box.  The ‘Layers in selected group’ should automatically populate with the six tm_sacsub raster maps (see figure below).  
 a.	If the layers do not populate, click ‘Add’ and check the boxes next to the six tm_sacsub.n maps.
 
-![Editing tm_sacsub Imagery Group](/figures/Editing_tm_sacsub_Imagery_Group.png "Editing tm_sacsub Imagery Group")
+![Editing tm_sacsub Imagery Group](figures/Editing_tm_sacsub_Imagery_Group.png "Editing tm_sacsub Imagery Group")
 
 7.	Check ‘Define also sub-group…’.
 8.	Click OK to add the sub-group and dismiss the tool.
@@ -171,7 +171,7 @@ For the first step, training, we will create a new vector map and digitize a few
 	+ Length: 10
 7.	Click Add button to create the column.  The new column will appear in the Table list.  If you make a mistake, you can right-click on a column and choose ‘Drop selected column’ to delete it from the table.
 
-![Creating a New Attribute Column](/figures/Creating_a_New_Attribute_Column.png "Creating a New Attribute Column")
+![Creating a New Attribute Column](figures/Creating_a_New_Attribute_Column.png "Creating a New Attribute Column")
 
 8.	Click Quit button to close the table manager.
 Now that we have the vector map created, we need to display the raster map that we wish to digitize our training areas from.  Instead of creating a new raster composite, we will create a new, temporary RGB display raster.
@@ -184,11 +184,11 @@ Now that we have the vector map created, we need to display the raster map that 
 		+ Name of … ‘blue’: tm_sacsub.3@Classification  
 11.	Click OK button to create the RGB temporary raster overlay and add it to the map layers list (shown in figure below).
 
-![RGB Raster Overlay in Map ](/figures/RGB_Raster_Overlay_in_Map.png "RGB Raster Overlay in Map")
+![RGB Raster Overlay in Map ](figures/RGB_Raster_Overlay_in_Map.png "RGB Raster Overlay in Map")
 
 Note: The Training@Classification vector map may be hidden behind the RGB raster overlay in the map layers list (shown in figure below).  If this happens, simply click on a different tab in the Layer Manager window, then click back to the ‘Map layers’ tab.
 
-![Creating a New Attribute](/figures/Creating_a_New_Attribute.png "Creating a New Attribute")
+![Creating a New Attribute](figures/Creating_a_New_Attribute.png "Creating a New Attribute")
 
 12.	Drag the Training@Classification map above the raster overlay in the map layers list to have the vector map display on top of the raster map (you won’t notice a difference now, but you will when we start editing the vector map).
 
@@ -196,21 +196,21 @@ Now we are set to create our training dataset.  In our training dataset, we will
 
 13.	In the map layers list, right-click on Training@Classification and choose ‘Start editing’ from the contextual menu.  This will enable and display the digitizer toolbar in the Map Display window (shown in "RGB Raster Overlay in Map Display and Map Layers List" figure).
 
-![: Digitizer Toolbar in Map Display Window](/figures/Digitizer_Toolbar.png "Digitizer Toolbar in Map Display Window")
+![: Digitizer Toolbar in Map Display Window](figures/Digitizer_Toolbar.png "Digitizer Toolbar in Map Display Window")
 
 We will use this toolbar to create new training areas and set the Category and Descr attributes to the appropriate values.
 
 14.	Zoom to the field shown in Figure 9.  This is an agriculture field we will specify as our first training area.
 
-![: Agriculture Field](/figures/Agriculture_Field.png "Agriculture Field")
+![Agriculture Field](figures/Agriculture_Field.png "Agriculture Field")
 
-15.	Click ‘Digitize new area’ button ![: Digitize new area’ button ](/figures/Digitize_new_area_button.png "Digitize new area’ button ")  on the Digitizer toolbar.  This selects the tool.  
+15.	Click ‘Digitize new area’ button ![Digitize new area’ button ](figures/Digitize_new_area_button.png "Digitize new area’ button ")  on the Digitizer toolbar.  This selects the tool.  
 
 In general, the tools on the Digitizer toolbar perform actions with a left-click, undo actions with a  control-click, and confirm/complete actions with a  right-click.  Therefore, to create an area with four vertices, we would left-click five times to place the four vertices and the fifth vertex at the same location as the first vertex (to close the area), then right-click to complete the area.
 
 16.	Using the figure below as a guide, left-click four times to create the four vertices for the area, then left-click a fifth time on top of the first vertex to close the area, then right-click to complete the area.  When the area is created, the ‘Define attributes’ dialog will appear.
 
-![: Agriculture Field and Digitized Area Showing Clicks](/figures/Agriculture_Field_and_Digitized_Area.png "Agriculture Field and Digitized Area Showing Clicks")
+![Agriculture Field and Digitized Area Showing Clicks](figures/Agriculture_Field_and_Digitized_Area.png "Agriculture Field and Digitized Area Showing Clicks")
 
 17.	In the ‘Define attributes’ dialog, set the ‘Descr’ attribute value to ‘AG1’.
 18.	Click ‘Submit’ button to save the attribute and close the window.  If the window does not close, click ‘Cancel’ button.
@@ -218,13 +218,13 @@ In general, the tools on the Digitizer toolbar perform actions with a left-click
 
 If you make a mistake when digitizing, you can use the ‘Delete feature(s)’ tool !Delete feathers tool](/figures/Delete_feature(s)_tool.png "[: Delete features tool")  to remove unwanted features.  To use the tool, first, left-click on the outline (or line, or vertex) of the feature you wish to remove, then right-click to confirm and complete the delete action.
 
-![: Water1 Training Area](/figures/Water1_Training_Area.png "Water1 Training Area")
+![Water1 Training Area](figures/Water1_Training_Area.png "Water1 Training Area")
 
-![: Grass1 Training Area](/figures/Grass1_Training_Area.png "Grass1 Training Area")
+![Grass1 Training Area](figures/Grass1_Training_Area.png "Grass1 Training Area")
 
-![: Forest1 Training Area](/figures/Forest1_Training_Area.png "Forest1 Training Area")
+![Forest1 Training Area](figures/Forest1_Training_Area.png "Forest1 Training Area")
 
-20.	When you have completed digitizing all five training areas, click ‘Quit digitizer’ button ![Quit Digitizer button](/figures/Quit_Digitizer_button.png "Quit Digitizer button").
+20.	When you have completed digitizing all five training areas, click ‘Quit digitizer’ button ![Quit Digitizer button](figures/Quit_Digitizer_button.png "Quit Digitizer button").
 
 21.	Click ‘Yes’ to the ‘Save changes?’ dialog to save your digitized training areas.  The digitized areas will now display in a bland grey color letting you know that they have been saved to the vector map.
 
@@ -242,7 +242,7 @@ With the vector training map completed, the next step is to convert it to a rast
 	+ Add created map(s) into layer tree: checked
 24.	Click ‘Run’ button to execute the tool then close the tool.  The TrainingAreas raster will be added to the map layers list and displayed in the Map Display (see figure below for example).  
 
-![TrainingAreas Raster Displayed](/figures/TrainingAreas_Raster_Displayed.png "TrainingAreas Raster Displayed")
+![TrainingAreas Raster Displayed](figures/TrainingAreas_Raster_Displayed.png "TrainingAreas Raster Displayed")
 
 The TrainingAreas raster map is displaying the NULL cells as white and is obscuring our view of the underlying imagery.  We will make the NULL cells transparent so we can see where the training areas lay on top of the imagery.
 
@@ -253,12 +253,12 @@ The TrainingAreas raster map is displaying the NULL cells as white and is obscur
 
 The NULL cells will now be transparent and the two raster maps will be displayed together (as shown in the figure below).
 
-![TrainingAreas Raster with Transparent NULL Cells](/figures/TrainingAreas_Raster_with_Transparent_NULL_Cells.png "TrainingAreas Raster with Transparent NULL Cells")
+![TrainingAreas Raster with Transparent NULL Cells](figures/TrainingAreas_Raster_with_Transparent_NULL_Cells.png "TrainingAreas Raster with Transparent NULL Cells")
 
 29.	In the Map Display, click 'Query raster/vector maps button' ![Query raster and vector maps button](/figures/query_ras_vec_button.png "Query raster and vector maps button") button to select the tool.  This tool will display the attributes of the raster or vector that you click on the map display.
 30.	Click on one of the training areas to display its attributes.  When you do this, in the Layer Manager, the ‘Command console’ tab will activate and the result of the Query tool will display (example figure below).  What you should verify is that the category and Descr are stored in the training area properly (example circled in figure below).  If you are not getting the expected results, you may need to revisit previous steps above.
 
-![Result of Query on TrainingAreas Raster Map](/figures/Result_of_Query_on_TrainingAreas_Raster_Map.png "Result of Query on TrainingAreas Raster Map")
+![Result of Query on TrainingAreas Raster Map](figures/Result_of_Query_on_TrainingAreas_Raster_Map.png "Result of Query on TrainingAreas Raster Map")
 
 
 In this task, we will perform the second step of a supervised classification.  In this step, we will first generate and review the spectral signatures of the training areas that we specified in the Task 3.  Next, we will perform the supervised classification and review the results.  Let’s start with generating the spectral signatures.
@@ -276,11 +276,11 @@ In this task, we will perform the second step of a supervised classification.  I
 Sacramento\Classification\group\tm_sacsub_group\subgroup\
 tm_sacsub_group\sig\TrainingSignatures. Tree structure shown in figure below.
 
-![Path to TrainingSignatures File](/figures/Path_to_TrainingSignatures_File.png "Path to TrainingSignatures File")
+![Path to TrainingSignatures File](figures/Path_to_TrainingSignatures_File.png "Path to TrainingSignatures File")
 
 Let’s take a few moments to review and discuss the spectral signatures file partially shown in the figure below.  Once the spectral signature is created, it can be evaluated to see if it looks like a high quality signature (that is, one that has a single bell-shaped histogram, and small standard deviations, and variances for each band).
 
-![Portion of TrainingSignatures Spectral Signature File](/figures/Portion_of_TrainingSignatures_Spectra_Signature_File.png "Portion of TrainingSignatures Spectral Signature File")
+![Portion of TrainingSignatures Spectral Signature File](figures/Portion_of_TrainingSignatures_Spectra_Signature_File.png "Portion of TrainingSignatures Spectral Signature File")
 
 The first line display the text label of the class, in this case, ‘AG1’ representing agriculture.  The second line reports the number of cells in the class.  The third line is the mean values per band of the class.  The remaining lines are the semi-matrix of band-band covariance.
 
@@ -318,7 +318,7 @@ A full set of training areas has been provided for you in the lab folder.  We wi
 	+ Add created map(s) into layer tree: checked  
 12.	Click ‘Run’ button to execute the tool then close the tool.  The Spectral_sigs_Training raster will be added to the map layers list and displayed in the Map Display (see figure below). We will use this raster map going forward in this lab.  
 
-![Full Set of Training Areas](/figures/Full_Set_of_Training_Areas.png "Full Set of Training Areas")
+![Full Set of Training Areas](figures/Full_Set_of_Training_Areas.png "Full Set of Training Areas")
 
 We will first re-generate the spectral signatures file using the full set of training areas, then move forward to the supervised classification.
 
@@ -347,7 +347,7 @@ With the spectral signature file review complete, we can now move on to the next
 22.	On the Layer Manager window, click Map layers.  You should see our classified image listed.  On the Map Display, you should see the classified image (shown in the figure below).
 	+ Note: if you do not see the image in the map display, right-click on the layer in the Map Layers list, and choose ‘Zoom to selected map(s)’ from the contextual menu.
 
-![Supervised Classification Visualization](/figures/Supervised_Classification_Visualization.png "Supervised Classification Visualization")
+![Supervised Classification Visualization](figures/Supervised_Classification_Visualization.png "Supervised Classification Visualization")
 
 With the classification completed, we will now move to interpreting the result.
 
@@ -374,14 +374,14 @@ Spectral Class Number	Information Class Number
 		+ Name for output raster map: tm_sacsub_sup_reclass  
 		+ enter values interactively:  
 
-![Reclassification](/figures/Reclassification.png "Reclassification")
+![Reclassification](figures/Reclassification.png "Reclassification")
 
 3. Continue to set the parameters 
 	+ Add created map(s) into layer tree: checked  
 	+ Click ‘Run’ button to execute the reclassification.   
 4.	View the reclassified raster map in the Map Display.  You may need to rearrange or toggle visibility of other maps in the map layers list to view the reclassified raster map (shown in the figure below).
 
-![Reclassified Supervised Classification](/figures/Reclassified_Supervised_Classification.png "Reclassified Supervised Classification")
+![Reclassified Supervised Classification](figures/Reclassified_Supervised_Classification.png "Reclassified Supervised Classification")
 
 4.	Query a few cells to view the values.  Notice that there are only five classes (and colors) represented in the raster map.  This makes it easier to understand what is being classified in the raster.
 
@@ -395,12 +395,12 @@ The colors do not make much sense, since they are randomly assigned.  Since each
 	+ Color tab:  
 		+ or enter values interactively:  
 
-![Create Color Table](/figures/Create_Color_Table.png "Create Color Table")
+![Create Color Table](figures/Create_Color_Table.png "Create Color Table")
 
 1.	You can optionally save the color rules by clicking the ‘Save As…’ button.  These can later be loaded by clicking the ‘Load’ button.
 8.	Click ‘Run’ button to set the color table for the raster map.  If no errors are displayed, close the Color tables dialog.  You should now see the reclassified and recolored raster shown in the figure below.
 
-![Recolored and Reclassified Supervised Classification](/figures/Recolored_and_Reclassified_Supervised_Classification.png "Recolored and Reclassified Supervised Classification")
+![Recolored and Reclassified Supervised Classification](figures/Recolored_and_Reclassified_Supervised_Classification.png "Recolored and Reclassified Supervised Classification")
 
 ### Task 6		Challenge: Perform a Second Class Supervised Classification
 

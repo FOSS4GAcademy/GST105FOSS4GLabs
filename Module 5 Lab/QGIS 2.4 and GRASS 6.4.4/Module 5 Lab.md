@@ -68,7 +68,7 @@ Let’s create the Location and Mapset.
 
 This will open the ‘Welcome to GRASS GIS’ window (shown in Figure 1) and possibly a command prompt.  You can ignore the command prompt for this exercise.  We will use this Welcome window to create our new location.
 
-![Welcome to GRASS GIS Window](/figures/Welcome_to_GRASS.png "[Welcome to GRASS GIS Window")
+![Welcome to GRASS GIS Window](figures/Welcome_to_GRASS.png "Welcome to GRASS GIS Window")
 
 2.	Click Browse button and navigate to the ‘Lab 5 Data’ folder that you extracted to your hard drive.
 3.	Create a new folder named ‘grassdata’ in your lab directory and select the new folder as the database.
@@ -80,7 +80,7 @@ This will open the ‘Welcome to GRASS GIS’ window (shown in Figure 1) and pos
 9.	Click Next.
 10.	Search for EPSG code 3309.  Select 3309 NAD27 / California Albers.  (Shown in Figure 2).
 
-![Choose EPSG Code](/figures/Choose_EPSG_Code.png "[Choose EPSG Code")
+![Choose EPSG Code](figures/Choose_EPSG_Code.png "Choose EPSG Code")
 
 11.	Click Next to set the CRS.  The ‘Select datum transformation’ window will appear.
 12.	Choose ‘1: Used in whole nad27 region’ as the datum transformation.
@@ -92,7 +92,7 @@ This will open the ‘Welcome to GRASS GIS’ window (shown in Figure 1) and pos
 
 You should now have the Sacramento and two Mapsets created in the GIS Database (shown in the figure below).  We can now start  our GRASS GIS Project.
 
-![Sacramento Location and Two Mapsets](/figures/Sacramento_Location.png "[Sacramento Location and Two Mapsets")
+![Sacramento Location and Two Mapsets](figures/Sacramento_Location.png "Sacramento Location and Two Mapsets")
 
 17.	Select ‘Classification’ from the Accessible mapsets list then click ‘Start GRASS’ button.  This will open the GRASS GUI.
 
@@ -100,7 +100,7 @@ You should now have the Sacramento and two Mapsets created in the GIS Database (
 
 When the GRASS GUI program starts, you are presented with two separate windows: The Layer Manger and the Map Display (shown in the figure below).
 
-![GRASS GUI Layer Manager and Map Display](/figures/GRASS_GUI_Layer.png "[GRASS GUI Layer Manager and Map Display")
+![GRASS GUI Layer Manager and Map Display](figures/GRASS_GUI_Layer.png "GRASS GUI Layer Manager and Map Display")
 
 The Layer Manager is composed of:
 
@@ -162,12 +162,12 @@ In this task, we will import the raster file that we will perform an unsupervise
 >
 >>d.	Add imported layers into layer tree: unchecked
 
-![Import raster data Options to Import tm_sacsub.img](/figures/Import_raster_data.png "[Import raster data Options to Import tm_sacsub.img")
+![Import raster data Options to Import tm_sacsub.img](figures/Import_raster_data.png "Import raster data Options to Import tm_sacsub.img")
 
 3.	Click ‘Import’ button then click ‘Close’ button to close the dialog.
 4.	Select the Layer Manager window and select the ‘Command console’ tab if it is not already selected (shown in the figure below). The console displays the results of the import function.  
 
-![Results of Raster Import Module Tool](/figures/Results_of_Raster_Import.png "[Results of Raster Import Module Tool")
+![Results of Raster Import Module Tool](figures/Results_of_Raster_Import.png "Results of Raster Import Module Tool")
 
 Note that the tool imported six rasters; one raster for each raster band.  GRASS treats each band as a separate raster map.  Each band can be visualized separately, or, if desired, a composite can be created, such as the composite created in Lab 3 for this course.  
 
@@ -179,7 +179,7 @@ When we imported tm_sacsub, GRASS created a group for us named ‘tm_sacsub’. 
 6.	Enter ‘tm_sacsub_group’ as the group  name in the top dropdown box.  The ‘Layers in selected group’ should automatically populate with the six tm_sacsub raster maps (see the figure below).
 	+ If the layers do not populate, click ‘Add’ and check the boxes next to the six tm_sacsub.n maps.
 
-![Editing tm_sacsub Imagery Group](/figures/Editing_tm_sacsub.png "[Editing tm_sacsub Imagery Group")
+![Editing tm_sacsub Imagery Group](figures/Editing_tm_sacsub.png "Editing tm_sacsub Imagery Group")
 
 7.	Check ‘Define also sub-group…’.
 8.	Click OK to add the sub-group and dismiss the tool.
@@ -223,7 +223,7 @@ Now that you have an understanding of what the tool will do, and the fact that i
 	+ Name for output file containing final report: <lab folder>\cluster10_report
 7.	Click ‘Run’ to execute the tool.  It will switch to the ‘Command output’ tab and display the results of the cluster tool (shown in the figure below).
 
-![Command Output for Cluster Tool](/figures/Command_Output_for_Cluster_Tool.png "[Command Output for Cluster Tool")
+![Command Output for Cluster Tool](figures/Command_Output_for_Cluster_Tool.png "Command Output for Cluster Tool")
 
 8.	Review the Command output for any errors.  If there are errors, double-check the steps above and run the cluster tool again.
 
@@ -241,7 +241,7 @@ Now let’s view the result (spectral) signatures file.
 12.	Open a text editor, such as Notepad and open 
 <lab_directory>\Sacramento\Classification\group\tm_sacsub_group\subgroup\tm_sacsub_group\sig\cluster10.   (Wow! What a long path!)  A portion of the cluster10 file is shown in the figure below.
 
-![cluster10 Result File Showing First Class](/figures/cluster_10_Result_File.png "[cluster10 Result File Showing First Class")
+![cluster10 Result File Showing First Class](figures/cluster_10_Result_File.png "cluster10 Result File Showing First Class")
 
 The spectral signature file can be reviewed to see the signature statistics for each of the spectral classes that were created from the unsupervised classification process.  The spectral signature file shows a Class ID (the spectral class number, which are unknown cover types at this point), the number of cells in the class, the means for each set of pixels that make up the spectral class, and an associated covariance matrix.  The covariance matrix is a set of values that compare how similar or different the pixel values that make up the spectral class are between the image bands.  The diagonal values represent the variance for a set of pixels for the specific band number.  Large values indicate that the pixel values are different; small variance values indicate that the pixels values that make up the spectral class are similar (or are homogeneous).
 
@@ -264,7 +264,7 @@ With the clustering complete, we can now move on to the second step of the unsup
 18.	On the Layer Manager window, click Map layers.  You should see our classified image listed.  On the Map Display, you should see the classified image (shown in the figure below).  
 	+ Note: if you do not see the image in the map display, right-click on the layer in the Map Layers list, and choose ‘Zoom to selected map(s)’ from the contextual menu.
 
-![Unsupervised Classification Visualization](/figures/Unsupervised_Classification_Visualization.png "[Unsupervised Classification Visualization")
+![Unsupervised Classification Visualization](figures/Unsupervised_Classification_Visualization.png "Unsupervised Classification Visualization")
 
 With the classification completed, we will now move to interpreting the result.
 
@@ -285,7 +285,7 @@ Water often times is represented as a single class or maybe two classes.  To mak
 	+ Add created map(s) into layer tree: checked
 3.	Click ‘Run’ to execute the composite tool.
 
-![Composite Options](/figures/Composite_Options.png "[Composite Options")
+![Composite Options](figures/Composite_Options.png "Composite Options")
 
 4.	If no errors are shown in the Command output, click ‘Close’ to close the tool.
 5.	View the Map Display.  Note that you can now see the true color composite.  Let’s have it draw underneath the classification image.
@@ -298,7 +298,7 @@ Now that you have identified which color represents water (yellow in our example
 9.	Click on a cell in the Map Display that represents water features.  
 10.	Open the Command console tab on the Layer Manager.  This will display the results of our query.  In our case, Class 1 represents water features (shown in the figure below).
 
-![Results of Raster Query for Water Features](/figures/Results_of_Raster_Query_for_Water_Features.png "[: Results of Raster Query for Water Features")
+![Results of Raster Query for Water Features](figures/Results_of_Raster_Query_for_Water_Features.png "Results of Raster Query for Water Features")
 
 Now that we know that Class 1 represents water features, let’s only apply a color to that class to easily see where water was identified.
 
@@ -315,7 +315,7 @@ Now that we know that Class 1 represents water features, let’s only apply a co
 default grey
 17.	Press ‘Run’ to set the color table.  You should see the figure below displayed in the Map Display.
 
-![Isolated Water Features (Class 1)](/figures/Isolated_Water_Features.png "[:Isolated Water Features (Class 1)")
+![Isolated Water Features (Class 1)](figures/Isolated_Water_Features.png "Isolated Water Features (Class 1)")
 
 Most of the Spectral Class 1 falls along the river and is likely correct; however, some pixels in class 1 fall on agricultural fields in the South West corner.
 
@@ -344,17 +344,17 @@ Now that we know that Class 1 represents water, let’s re-colorize all classes,
 		1 = 1 Water  
 		\* = *
 
->>>>![Reclassification Rules](/figures/Reclassification_Rules.png "[:Reclassification Rules")
+>>>>![Reclassification Rules](figures/Reclassification_Rules.png "Reclassification Rules")
  
 24.	Click ‘Run’ to reclassify the raster.
 25.	Click ‘Close’ to close the tool.
 
 You probably noticed that the newly added reclassified layer looks exactly the same as the original raster.  That is normal.  What has changed is the class label.  Let’s see what changed.
 
-26.	In the Layer Manager, select tm_sacsub_un_sup_class_reclass, then in the Map   Display, click ‘Query raster/vector maps’ button ![Query raster/vector maps' button](/figures/Query_raster_vector_maps'_button.png "[Query raster/vector maps' button").
+26.	In the Layer Manager, select tm_sacsub_un_sup_class_reclass, then in the Map   Display, click ‘Query raster/vector maps’ button ![Query raster/vector maps' button](figures/Query_raster_vector_maps'_button.png "Query raster/vector maps' button").
 27.	Click on a Water feature cell then inspect the Command console to see what was returned (shown in the figure below).
 
-![Reclassified Class 1](/figures/Reclassified_Class_1.png "[:Reclassified Class 1")
+![Reclassified Class 1](figures/Reclassified_Class_1.png "Reclassified Class 1")
 
 Reclassifying the raster map makes it more intuitive when trying to understand or query the layer in future operations.
 
