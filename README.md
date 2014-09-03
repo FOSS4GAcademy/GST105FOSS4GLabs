@@ -8,10 +8,10 @@ and GRASS GIS.
 ### Lab Topics
 
 + [x] Lab 3 - Image Composite, Mosaic, Subset
-+ [ ] Lab 4 - Image Rectification
-+ [ ] Lab 5 - Unsupervised Classification
-+ [ ] Lab 6 - Supervised Classification
-+ [ ] Lab 7 - Accuracy Assessment
++ [x] Lab 4 - Image Rectification
++ [x] Lab 5 - Unsupervised Classification
++ [x] Lab 6 - Supervised Classification
++ [x] Lab 7 - Accuracy Assessment
 
 *Labs with a checkmark are completely converted to Markdown*
 
