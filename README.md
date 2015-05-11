@@ -13,15 +13,15 @@ and GRASS GIS.
 + [x] Lab 6 - Supervised Classification
 + [x] Lab 7 - Accuracy Assessment
 
-*Labs with a checkmark are completely converted to Markdown*
+**Note: There is no Lab 1 or Lab 2**
 
-*Note: There is no Lab 1 or Lab 2*
+*Labs with a checkmark are completely converted to Markdown*
 
 ### Lab Contents
 
 Each Module folder contains a folder designating which version of the QGIS and GRASS GIS
-software it is written for (ex. `Module 1 Lab\QGIS 2.4\...`, `Module 4 Lab\QGIS 2.4 
-GRASS 6.4.4\...`).  The hope is that as new software versions are released, 
+software it is written for (ex. 'Module 1 Lab\\QGIS 2.4 and GRASS 6.4.4\\...', 'Module 4 Lab\\QGIS 2.8 
+GRASS 6.4.4\\...').  The hope is that as new software versions are released, 
 the prior lab's version will be updated and stored in a new (appropriately named) folder.
 
 Each lab contains the following four resources:
@@ -53,17 +53,15 @@ This work is licensed under the Creative Commons Attribution 3.0 Unported Licens
 ### Curriculum History
 
 FOSS4G Lab Author:
-Richard Smith, Ph.D.  
+Richard Smith, Ph.D., GISP
 Texas A&M University - Corpus Christi
 
 Original Lab Content Author:
 Nathan Jennings
 
-Copyright © National Information Security, Geospatial Technologies Consortium (NISGTC)
+The development of the original document was funded by the Department of Labor (DOL) Trade Adjustment Assistance Community College and Career Training (TAACCCT) Grant No.  TC-22525-11-60-A-48; The National Information Security, Geospatial Technologies Consortium (NISGTC) is an entity of Collin College of Texas, Bellevue College of Washington, Bunker Hill Community College of Massachusetts, Del Mar College of Texas, Moraine Valley Community College of Illinois, Rio Salado College of Arizona, and Salt Lake Community College of Utah.  This work is licensed under the Creative Commons Attribution 3.0 Unported License.  To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
-The development of these lab documents were funded by the Department of Labor (DOL) Trade Adjustment Assistance Community College and Career Training (TAACCCT) Grant No.  TC-22525-11-60-A-48; The National Information Security, Geospatial Technologies Consortium (NISGTC) is an entity of Collin College of Texas, Bellevue College of Washington, Bunker Hill Community College of Massachusetts, Del Mar College of Texas, Moraine Valley Community College of Illinois, Rio Salado College of Arizona, and Salt Lake Community College of Utah.  This work is licensed under the Creative Commons Attribution 3.0 Unported License.  To view a copy of this license, visit <http://creativecommons.org/licenses/by/3.0/> or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.  
-
-These documents were modified from their original form by Richard Smith and continues to be modified and improved by generous public contributions.
+This document continues to be modified and improved by generous public contributions.heir original form by Richard Smith and continues to be modified and improved by generous public contributions.
 
 ### Curriculum Document Format
 All curriculum is written in [Markdown][3].  Markdown was chosen for these reasons:
