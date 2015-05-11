@@ -21,7 +21,7 @@ This document continues to be modified and improved by generous public contribut
 
 ### 1. Introduction
 
-This lab will provide an introduction and overview of some of the basic functionality of GRASS GIS inside QGIS 2.4 for working with raw image data to add and view image data sets.  Students are encouraged to become familiar with working with and finding information on GRASS GIS help topics.  It is also recommended to create screenshots and notes of software and of lecture slides that can make up a student’s notes.
+This lab will provide an introduction and overview of some of the basic functionality of GRASS GIS inside QGIS for working with raw image data to add and view image data sets.  Students are encouraged to become familiar with working with and finding information on GRASS GIS help topics.
 
 This lab includes the following tasks:
 
@@ -44,9 +44,18 @@ GRASS GIS is installed by default when you install QGIS Desktop. While GRASS is 
 
 First, let’s start with some terminology and concepts.  Working with GRASS data is different than how you may be used to working with data using QGIS or other GIS software packages.  Since the storage paradigm is significantly different than what you have seen in prior courses, we will discuss how GRASS stores data first.  Refer to the figure below during the following explaination for a graphic representation of the storage concepts.
 
-In order for GRASS to start a project, it must first connect to a Database (also called a GISDBase).  The Database is simply a folder on your computer that has special sub directories.  Once GRASS connects to a Database, it then needs to access a Location.  A Location is a child directory of the Database and stores the coordinate system or map projection that all enclosed Mapsets will use; think of a Location as a common container for a project.  A Mapset is a child directory of a Location that represents a geographical subset of its parent Location.  Mapsets contain geographic data in their directories.  There are two types of mapsets: Permanent and owner.  A Permanent mapset usually contains read-only geographic data that can be used by anyone.  The Permanent mapset also may contain other information about the Location that is not stored anywhere else, therefore, the Permanent mapset must exist in every Location.  Owner mapsets are user-created and represent specific areas or study sites within the Location.  Think of a mapset as a collection of geographic data that is project or user specific.  Owner mapsets can be named whatever logical name is desired.  Examples of mapset names are ‘user1’ and ‘Nueces County’, where ‘user1’ represents a mapset created by, or created for a user on the system, and ‘Nueces County’ represents a project dealing with Nueces County, Texas. Last, there is the concept of a Region.  A Region is a subset of a Location defined by a rectangular bounding box.  The Region is important for raster operations as it bounds the area (region) that will participate in any raster operations executed in GRASS.  A Region is an operating parameter set when working in GRASS.
+In order for GRASS to start a project, it must first connect to a **Database** (also called a GISDBase).  The Database is simply a folder on your computer that has special sub directories. Once GRASS connects to a Database, it then needs to access a Location.
 
-If all of the above explaination was a little confusing, don’t worry, with practice in these labs, it will start to make more sense.
+A **Location** is a child directory of the Database and stores the coordinate system or map projection that all enclosed Mapsets will use; think of a Location as a common container for a project.
+
+A **Mapset** is a child directory of a Location that represents a geographical subset of its parent Location.  Mapsets contain geographic data in their directories.  There are two types of mapsets: *Permanent* and *owner*.
+
++ A **Permanent mapset** usually contains read-only geographic data that can be used by anyone.  The Permanent mapset also may contain other information about the Location that is not stored anywhere else, therefore, the Permanent mapset must exist in every Location.
++ **Owner mapsets** are user-created and represent specific areas or study sites within the Location.  Think of a mapset as a collection of geographic data that is project or user specific.  Owner mapsets can be named whatever logical name is desired.  Examples of mapset names are ‘user1’ and ‘Nueces County’, where ‘user1’ represents a mapset created by, or created for a user on the system, and ‘Nueces County’ represents a project dealing with Nueces County, Texas. 
+
+Last, there is the concept of a **Region**.  A Region is a subset of a Location defined by a rectangular bounding box.  The Region is important for raster operations as it bounds the area (region) that will participate in any raster operations executed in GRASS.  A Region is an operating parameter set when working in GRASS.
+
+If all of the above explanation was a little confusing, don’t worry, with practice in these labs, it will start to make more sense.
 
 ![GRASS Storage Paradigm](figures/GRASS_Storage_Paradigm.jpg)
 
@@ -56,7 +65,7 @@ Now let’s talk about how you can access the data and functionality of GRASS in
 
 The GRASS Toolbar is separated in two sections.  The left section contains three buttons that manage the Mapsets.  Let’s discuss these three buttons first.
 
-+ **Open Mapset** ![Open Mapset Button](figures/Open_Mapset_Button.png) - Opens the ‘Select GRASS Mapset’ dialog (shown in Figure 3) and allows you to set the Database (a.k.a. Gisdbase), Location, and Mapset for the current project.  When a Mapset is selected, all buttons on the GRASS Toolbar will be enabled.
++ **Open Mapset** ![Open Mapset Button](figures/Open_Mapset_Button.png) - Opens the ‘Select GRASS Mapset’ dialog (shown in figure below) and allows you to set the Database (a.k.a. Gisdbase), Location, and Mapset for the current project.  When a Mapset is selected, all buttons on the GRASS Toolbar will be enabled.
 
 ![Select GRASS Mapset Dialog](figures/Select_GRASS_Mapset_Dialog.png)
 
@@ -87,40 +96,40 @@ This task provided a brief overview of how GRASS can be used within QGIS.  This,
 An image composite is taking individual bands and putting them together into a single multi-band image data set.  In many cases, image data downloaded is provided this way where the end-user will need the ability to put imagery together.
 
 1. Start QGIS and enable the ‘GRASS’ toolbar.
-2. On the GRASS toolbar, click Open Mapset button  .
+2. On the GRASS toolbar, click Open Mapset button ![Open Mapset Button](figures/Open_Mapset_Button.png).
 3. Set the following options on the ‘Select GRASS Mapset’ dialog then click OK:  
 	+ Gisdbase: <Lab 3 Data folder>    
 	+ Location: Lab3Data  
 	+ Mapset: user1
-4. Load the following image bands from the Lab3Data Location into QGIS by clicking ‘Add GRASS raster layer’ button   on the GRASS toolbar then selecting the individual images you wish to add (see figure below):  
-	+ tm_sacsub1.tif
-	+ tm_sacsub2.tif
-	+ tm_sacsub3.tif
-	+ tm_sacsub4.tif
-	+ tm_sacsub5.tif
-	+ tm_sacsub7.tif
+4. Load the following image bands from the Lab3Data Location into QGIS by clicking ‘Add GRASS raster layer’ button ![Add GRASS Raster Layer Button](figures/Add_GRASS_Raster_Layer_Button.png) on the GRASS toolbar then selecting the individual images you wish to add (see figure below):  
+	+ tm\_sacsub1.tif
+	+ tm\_sacsub2.tif
+	+ tm\_sacsub3.tif
+	+ tm\_sacsub4.tif
+	+ tm\_sacsub5.tif
+	+ tm\_sacsub7.tif
 
 ![Adding a GRASS Raster Layer](figures/Adding_a_GRASS_Raster_Layer.png)
 
 The six bands are from a Landsat TM satellite subset.  These will show up in the QGIS Layers list.  Note the wavelengths for these bands.  Refer to the lecture material or search the Internet on the Landsat sensor.
 
 6. Open GRASS Tools by clicking ‘Open GRASS Tools’ ![Open GRASS Tools Button](figures/Open_GRASS_Tools_Button.png) button on the GRASS toolbar.
-7. Open ‘Modules Tree’ tab.
+7. Select ‘Modules Tree’ tab.
 8. Expand the tree to find r.composite tool.  
 	+ GRASS Modules
 		+ Raster
 			+ Manage map colors
 				+ r.composite
-9. Double-click on r.composite tool to open it.
+9. Click on r.composite tool to open it.
 10. Set the following options.  Refer to the figure below.
-	+ Name of raster map to be used for <red>: tm_sacsuub3
+	+ Name of raster map to be used for <red>: tm\_sacsuub3
 		+ Click ‘Use region of this map’ button ![Use Region of This Map Button](figures/Use_Region_Of_This_Map_Button.png)  
-	+ Name of raster map to be used for <green>: tm_sacsuub2
-	+ Name of raster map to be used for <blue>: tm_sacsuub1
+	+ Name of raster map to be used for <green>: tm\_sacsuub2
+	+ Name of raster map to be used for <blue>: tm\_sacsuub1
 	+ (1-256): 32  -- represents number of values for red
 	+ (1-256): 32  -- represents number of values for green
 	+ (1-256): 32-- represents number of values for blue
-	+ Name for output raster map: Composite_32_TM_123
+	+ Name for output raster map: Composite\_32\_TM\_123
 11. Click ‘Run’ button to run the tool.  The dialog will switch to the Output tab to show the results of the tool.  If it does not say ‘Successfully finished’, re-check that you entered the options correctly, and run again.
 
 ![r.composite Tool](figures/r_composite_Tool.png)
@@ -130,30 +139,30 @@ The six bands are from a Landsat TM satellite subset.  These will show up in the
 Let’s investigate this new raster a little more by viewing details about it in the GRASS Tools Browser.
 
 13. Open GRASS Tools and select the ‘Browser’ tab.
-14. Expand the user1-->raster branches to see all of the raster files in the mapset.
-a. If you do not see the newly created compsite raster (Composite_32_TM_123), click the Refresh button ![Refresh Button](figures/Refresh_Button.png).
-15. Select Composite_32_TM_123 in the browser tree.  A list of properties describing the selected raster will display.
+14. Expand the user1 | raster branches to see all of the raster files in the mapset.
+a. If you do not see the newly created compsite raster (Composite\_32\_TM\_123), click the Refresh button ![Refresh Button](figures/Refresh_Button.png).
+15. Select Composite\_32\_TM\_123 in the browser tree.  A list of properties describing the selected raster will display.
 
 What are the Properties for the following?
 
 + Rows
 + Columns
-+ Resolution
++ N-S Resolution
++ E-W Resolution
 + Format
 + Data description
-+ Bands
 
 16. Using the same procedure as above, create a new composite raster using bands 4, 5, and 7.  Use the following band assignments:
 
-+ Red: tm_sacsub4
-+ Green: tm_sacsub5
-+ Blue: tm_sacsub7
++ Red: tm\_sacsub4
++ Green: tm\_sacsub5
++ Blue: tm\_sacsub7
 
 Your output composite should look like the figure below.  
 
 ![Composite of Bands 4, 5, 7](figures/Composite_Of_Bands_4_5_7.png)
 
-What sensor wavelengths are assigned to the following output image bands in the image just created?
+What sensor wavelengths are assigned to the following output image bands in the image just created (refer to lecture notes)?
 
 + Band 4 = 
 + Band 5 = 
@@ -180,7 +189,7 @@ This task will walk through the steps to generate a simple image mosaic to merge
 	+ Location: Lab3Data
 	+ Mapset: user2
 4. Load the following image bands from the Lab3Data Location into QGIS by clicking ‘Open GRASS Tools’ button ![Open GRASS Tools Button](figures/Open_GRASS_Tools_Button.png) on the GRASS toolbar then selecting the ‘Browser’ tab.
-5. Expand user2-->raster.
+5. Expand user2 | raster.
 6. Select the following rasters then press ‘Add selected map to canvas’ button  .
 	+ subset1
 	+ subset2
@@ -194,8 +203,8 @@ Note that the four rasters are adjacent and represent one larger square area. Be
 9. Open GRASS Tools.
 10. Click ‘Modules List’ tab.
 11. In the Filter input box, enter ‘region’.
-12. Double-click on the g.region.multiple.raster tool to open it.
-13. Set the following options for the g.region.multiple.raster tool (refer to Figure 8):
+12. Click on the g.region.multiple.raster tool to open it.
+13. Set the following options for the g.region.multiple.raster tool (refer to the figure below):
 	+ Type in map names separated by a comma: subset1,subset2,subset3,subset4  *Note: Type the names in.*
 
 ![g.region.multiple.raster Tool Settings.png](figures/g_region_multiple_raster_Tool_Settings.png)
@@ -212,7 +221,7 @@ Now that the region has been set, we will now mosaic the rasters together in to 
 16. Open GRASS Tools.
 17. Click ‘Modules List’ tab.
 18. In the Filter input box, enter ‘patch’ to quickly find the r.patch tool.
-19. Double-click on the r.patch tool to open it.  
+19. Click on the r.patch tool to open it.  
 20. Set the following options for the r.patch tool (refer to figure below):
 	+ Name of raster maps to be patched together: subset1
 	+ Name of raster maps to be patched together: subset1,subset2,subset3,subset4   *Note: Type the names in.*
@@ -234,7 +243,7 @@ This task will walk through the steps to generate an Image Subset.
 	+ Location: Lab3Data
 	+ Mapset: user2
 4. Load the ‘mosaic’ raster from Task 3 on the map canvas.
-5. On the GRASS Toolbar, click ‘Edit Current GRASS Region’ button ![Edit Current GRASS Region Button](figures/Edit_Current_GRASS_Region_Button.png).  This will open the GRASS Region Settings dialog box.
+5. On the GRASS Toolbar, click ‘Edit Current GRASS Region’ button ![Edit Current GRASS Region Button](figures/Edit_Current_GRASS_Region_Button.png). This will open the GRASS Region Settings dialog box.
 
 The current region can be set in two ways using this dialog box.  The first way is to manually enter the four extent values.  The second way is to drag a box on the map canvas to set the four extent values.  We will use the second option and drag a box.
 
@@ -253,12 +262,12 @@ The Resolution setting determines what cell size will be used in the region.  As
 8. Click OK to set the new region.
 9. Open GRASS Tools.
 10. Find and open the r.resample tool.
-11. Click on the 'Manual' tab of the tool and read the manual.  Every GRASS tool has a manual and are worth referencing when discovering their funcationality.
+11. Click on the 'Manual' tab of the tool and read the manual.  Every GRASS tool has a manual and are worth referencing when discovering their functionality.
 12. Click the 'Options' tab of the tool and set the following options:
 	+ Name of an input layer: mosaic
-	+ Name of an output layer: smaller_mosaic
+	+ Name of an output layer: smaller\_mosaic
 13. Click Run to execute the tool.
-14. Verify that the smaller_mosaic was successfully created.
+14. Verify that the smaller\_mosaic was successfully created.
 
 ### Task 5 - Calculate NDVI
 
@@ -270,15 +279,19 @@ This task will teach you how to calculate NDVI.
 	+ Gisdbase: <Lab 3 Data folder>
 	+ Location: Lab3Data
 	+ Mapset: user1
-4. Load the following image bands from the Lab3Data Location into QGIS by clicking ‘Add GRASS raster layer’ button ![Add GRASS Raster Layer Button](figures/Add_GRASS_Raster_Layer_Button.png) on the GRASS toolbar then selecting the individual images you wish to add (see Figure 1)
-d. tm_sacsub3 – represents the red band
-e. tm_sacsub4 – represents the near infrared band
+4. Load the following image bands from the Lab3Data Location into QGIS by clicking ‘Add GRASS raster layer’ button ![Add GRASS Raster Layer Button](figures/Add_GRASS_Raster_Layer_Button.png) on the GRASS toolbar then selecting the individual images you wish to add.
+
+	+ tm\_sacsub3 – represents the red band
+	+ tm\_sacsub4 – represents the near infrared band
+
 5. Find and open r.mapcalculator tool.  Set the following options:
-f. A: tm_sacsub3
-i. Use region of this map  : selected
-g. B: tm_sacsub4
-h. Formula: float(B-A)/float(B+A)
-i. Name for output raster map: NDVI
+
+	+ A: tm\_sacsub3
+	+ Use region of this map  : selected
+	+ B: tm\_sacsub4
+	+ Formula: float(B-A)/float(B+A)
+	+ Name for output raster map: NDVI
+
 6. Run the tool and add the output to the map canvas.
 
 At this point, you should have a black and white image that looks like the figure below.  While this is the calculated NDVI, it can be more visually appealing to assist the map reader in understanding where the healthy vegetation is located. To do this, we will apply a color table to the NDVI raster.
@@ -292,17 +305,17 @@ At this point, you should have a black and white image that looks like the figur
 
 ![Calculated NDVI with Color Table Applied.png](figures/Calculated_NDVI_With_Color_Table_Applied.png)
 
-### Task 6 - Challenge: Image Subset with r.patch
+### Task 6 - Challenge: Image Subset with r.patch (optional)
 
 Now that you know how to create an image subset with r.resample, determine how you would create an image subset with r.patch.  
 
 ### 3. Conclusion
 
-In this lab, you have learned the basics of using GRASS Tools inside of QGIS to complete a composite, mosaic, and subset.  This lab just scratches the surface in terms of GRASS’s capabilities.  Future labs will delve deeper in to GRASS.
+In this lab, you have learned the basics of using GRASS Tools inside of QGIS to complete a composite, mosaic, subset, and NDVI.  This lab just scratches the surface in terms of GRASS’s capabilities.  Future labs will delve deeper in to GRASS.
 
 ### 4. Discussion Questions
 
-1. Answer the questions from Task 1.
+1. Answer the questions from Task 2 (copied below).
 	+ Create new composites to answer the following three questions.
 		1. Change the display to show a true color band combination (Red Display = Band 3, Green Display =Band 2, and Blue Display = Band 1).  Describe what you see and the colors of the features.  Based on the information from the lecture explain why the features appear as these colors in the color display.
 
