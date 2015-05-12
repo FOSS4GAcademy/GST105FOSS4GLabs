@@ -60,7 +60,7 @@ In this task, we will define a new GRASS Location and Mapset to serve as our wor
 
 Let’s create the Location and Mapset.
 
-1.	Open GRASS 6.4.3 GUI.  In Windows, this can be found at Start | All Programs | QGIS | GRASS GIS 6.4.3 | GRASS 6.4.3 GUI. If you installed QGIS using OSGEO4W, then it can be found at Start | All Programs | OSGEO4W | GRASS GIS 6.4.3 GUI.
+1. Open GRASS 6.4.3 GUI.  In Windows, this can be found at Start | All Programs | QGIS | GRASS GIS 6.4.3 | GRASS 6.4.3 GUI. If you installed QGIS using OSGEO4W, then it can be found at Start | All Programs | OSGEO4W | GRASS GIS 6.4.3 GUI.
 
 This will open the ‘Welcome to GRASS GIS’ window (shown in the figure below) and possibly a command prompt.  You can ignore the command prompt for this exercise.  We will use this Welcome window to create our new location.
 
