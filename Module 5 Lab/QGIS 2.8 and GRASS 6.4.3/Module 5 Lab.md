@@ -2,7 +2,7 @@
 ## Lab 5: Unsupervised Classification
 ### Objective – Perform an Unsupervised Classification
 
-Document Version: 5/10/2015
+Document Version: 5/11/2015
 
 **FOSS4G Lab Author:**
 Richard Smith, Ph.D., GISP
@@ -50,15 +50,15 @@ A simple classification scheme will be used for the lab:
 
 ### Task 1 Define New GRASS Location
 
-In this task, we will define a new GRASS Location and Mapset to serve as our working environment for the unsupervised classification.  First, let’s briefly review a few storage concepts.  For a  more detailed overview, revisit Task 1 in Lab 3 for this course, or, read the GRASS GIS documentation at <http://grass.osgeo.org/">
+In this task, we will define a new GRASS Location and Mapset to serve as our working environment for the unsupervised classification.  First, let’s briefly review a few storage concepts.  For a  more detailed overview, revisit Task 1 in Lab 3 for this course, or, read the GRASS GIS documentation at <http://grass.osgeo.org/">.
 
 In order for GRASS to start a project, it must first connect to a Database (also called a GISDBase or a GIS Data Directory).  The Database is simply a folder on your computer that has special sub directories.  Once GRASS connects to a Database, it then needs to access a Location.  A Location is a child directory of the Database and stores the coordinate system or map projection that all enclosed Mapsets will use.  A Mapset is a child directory of a Location that represents a geographical subset of its parent Location.  Mapsets contain geographic data in their directories.  There are two types of mapsets: Permanent and owner.  
 
 Let’s create the Location and Mapset.
 
-1. Open GRASS 6.4.3 GUI.  In Windows, this can be found at Start->All Programs->QGIS Chugiak->GRASS GIS 6.4.3->GRASS 6.4.3 GUI
+1. Open GRASS 6.4.3 GUI.  In Windows, this can be found at Start | All Programs | QGIS | GRASS GIS 6.4.3 | GRASS 6.4.3 GUI. If you installed QGIS using OSGEO4W, then it can be found at Start | All Programs | OSGEO4W | GRASS GIS 6.4.3 GUI.
 
-This will open the ‘Welcome to GRASS GIS’ window (shown in Figure 1) and possibly a command prompt.  You can ignore the command prompt for this exercise.  We will use this Welcome window to create our new location.
+This will open the ‘Welcome to GRASS GIS’ window (shown in the figure below) and possibly a command prompt.  You can ignore the command prompt for this exercise.  We will use this Welcome window to create our new location.
 
 ![Welcome to GRASS GIS Window](figures/Welcome_to_GRASS.png "Welcome to GRASS GIS Window")
 
@@ -143,14 +143,14 @@ As we select modules to run, you will notice that the module names are preceded 
 In this task, we will import the raster file that we will perform an unsupervised classification on, and create an image group.  This will prepare the imagery for input for classification.
 
 
-1. Click File->Import Raster Data->Common formats import [r.in.gdal].  This will open the ‘Import raster data’ module window.
+1. Click File | Import Raster Data | Common formats import [r.in.gdal].  This will open the ‘Import raster data’ module window.
 2. Set the following options (see the figure below for reference):
 	+ Source Type: File  
 	+ Source settings
 		+ Format: Erdas Imagine Images (.img)  
-		+ File: <lab directory>\tm_sacsub.img
+		+ File: <lab directory>\\tm\_sacsub.img
 	+ List of GDAL layers
-		+ tm_sacsub.img: checked
+		+ tm\_sacsub.img: checked
 		+ Add imported layers into layer tree: unchecked
 
 ![Import raster data Options to Import tm_sacsub.img](figures/Import_raster_data.png "Import raster data Options to Import tm_sacsub.img")
@@ -164,11 +164,11 @@ Note that the tool imported six rasters; one raster for each raster band.  GRASS
 
 To perform an image classification, the raster maps (bands) must be combined in to a group and subgroup.  A group is a collection of raster maps.  A subgroup is a subset of the group’s raster maps that will be utilized in the image classification.  So, for instance, if you had a group of bands 1,2,3,4,5,6, but only wanted to use bands 3, and 4 for analysis, you would create a subgroup containing only bands 3 and 4.
 
-When we imported tm_sacsub, GRASS created a group for us named ‘tm_sacsub’.  We will edit the group containing all 6 raster maps to add a subgroup containing all of the raster maps, since we will use all bands for our unsupervised classification.
+When we imported tm\_sacsub, GRASS created a group for us named ‘tm\_sacsub’.  We will edit the group containing all 6 raster maps to add a subgroup containing all of the raster maps, since we will use all bands for our unsupervised classification.
 
-5. Click Imagery->Develop images and groups->Create/edit group [i.group].  This will open the ‘Create or edit imagery groups’ tool.
-6. Enter ‘tm_sacsub_group’ as the group  name in the top dropdown box.  The ‘Layers in selected group’ should automatically populate with the six tm_sacsub raster maps (see the figure below).
-	+ If the layers do not populate, click ‘Add’ and check the boxes next to the six tm_sacsub.n maps.
+5. Click Imagery | Develop images and groups | Create/edit group [i.group].  This will open the ‘Create or edit imagery groups’ tool.
+6. Enter ‘tm\_sacsub\_group’ as the group  name in the top dropdown box.  The ‘Layers in selected group’ should automatically populate with the six tm\_sacsub raster maps (see the figure below).
+	+ If the layers do not populate, click ‘Add’ and check the boxes next to the six tm\_sacsub.n maps.
 
 ![Editing tm_sacsub Imagery Group](figures/Editing_tm_sacsub.png "Editing tm_sacsub Imagery Group")
 
@@ -177,12 +177,12 @@ When we imported tm_sacsub, GRASS created a group for us named ‘tm_sacsub’. 
 
 Now that the imagery has been loaded, and a group and subgroup have been specified, the last step is to set the region.  If you recall from Lab 3, a Region is a subset of a Location defined by a rectangular bounding box.  The Region is important for raster and imagery operations as it bounds the area (region) that will participate in any raster and imagery operations executed in GRASS.  A Region is an operating parameter set when working in GRASS.
 
-Let’s set the region equal to one of the tm_sacsub raster maps.
+Let’s set the region equal to one of the tm\_sacsub raster maps.
 
-9. Click Settings->Region->Set region [region] on the Layer Manager window.  This will open the region tool.
+9. Click Settings | Region | Set region [region] on the Layer Manager window.  This will open the region tool.
 10. Set the following options:
-	+ [multiple] Set region to match this raster map: tm_sacsub.1@Classification
-		+ Note: The ‘@Classification’ denotes that tm_sacsub.1 is stored in the ‘Classification’ mapset.
+	+ [multiple] Set region to match this raster map: tm\_sacsub.1@Classification
+		+ Note: The ‘@Classification’ denotes that tm\_sacsub.1 is stored in the ‘Classification’ mapset.
 11. Click ‘Run’.  The tool will switch to the ‘Command output’ tab.  If you do not see any line that begins with the word ‘ERROR’, then the region has been successfully set.
 12. Click ‘Close’ to close the region tool.
 
@@ -192,7 +192,7 @@ With the imagery loaded, group and subgroup defined, and region set, we can now 
 
 In this task, we will perform an unsupervised classification using two tools: i.cluster, and i.maxlik.  Let’s get started.
 
-1. Click Imagery->Classify image->Clustering input for unsupervised classification [i.cluster] from the Layer Manager menu bar.  This will open the cluster tool.
+1. Click Imagery | Classify image | Clustering input for unsupervised classification [i.cluster] from the Layer Manager menu bar.  This will open the cluster tool.
 
 To understand what a tool will do, it is important to refer to the tool’s manual.  Luckily for us, the majority of tools that opens in GRASS GUI have a ‘Manual’ tab that displays the tools’ manuals.  Let’s explore the i.cluster  manual now to understand how this tool works.
 
@@ -206,31 +206,31 @@ Now that you have an understanding of what the tool will do, and the fact that i
 
 4. Click ‘Required’ tab.
 5. Set the following options:  
-	+ Name of input imagery group: tm_sacsub_group@Classification  
-	+ Name of input imagery subgroup: tm_sacsub_group  
+	+ Name of input imagery group: tm\_sacsub\_group@Classification  
+	+ Name of input imagery subgroup: tm\_sacsub\_group  
 	+ Name for output file containing result signatures: cluster10  
 	+ Initial number of classes: 10
 6. Click ‘Optional’ tab.  
-	+ Name for output file containing final report: <lab folder>\cluster10_report
+	+ Name for output file containing final report: <lab folder>\\cluster10\_report
 7. Click ‘Run’ to execute the tool.  It will switch to the ‘Command output’ tab and display the results of the cluster tool (shown in the figure below).
 
 ![Command Output for Cluster Tool](figures/Command_Output_for_Cluster_Tool.png "Command Output for Cluster Tool")
 
 8. Review the Command output for any errors.  If there are errors, double-check the steps above and run the cluster tool again.
 
-The cluster tool creates two files of interest to us: the result signatures file (cluster10), and the final report (cluster10_report).  Let’s view the cluster10_report to see what it contains.
+The cluster tool creates two files of interest to us: the result signatures file (cluster10), and the final report (cluster10\_report).  Let’s view the cluster10\_report to see what it contains.
 
-9. Open a text editor, such as Notepad and open <lab directory>\cluster10_report.  
+9. Open a text editor, such as Notepad and open <lab directory>\\cluster10\_report.  
 
 This report contains detailed information about the results of the cluster tool as it iterated over the input subgroup multiple times to reach its convergence goal.   It reports the class means, standard deviations, class distribution, class separation, and how many classes were created.
 
-10. Take a few moments to review the cluster10_report.  Take note of the number of created classes (located at the bottom of the report).
-11. Close the cluster10_report.
+10. Take a few moments to review the cluster10\_report.  Take note of the number of created classes (located at the bottom of the report).
+11. Close the cluster10\_report.
 
 Now let’s view the result (spectral) signatures file.
 
 12. Open a text editor, such as Notepad and open 
-<lab_directory>\Sacramento\Classification\group\tm_sacsub_group\subgroup\tm_sacsub_group\sig\cluster10.   (Wow! What a long path!)  A portion of the cluster10 file is shown in the figure below.
+<lab\_directory>\\Sacramento\\Classification\\group\\tm\_sacsub\_group\\subgroup\\tm\_sacsub\_group\\sig\\cluster10. (Wow! What a long path!)  A portion of the cluster10 file is shown in the figure below.
 
 ![cluster10 Result File Showing First Class](figures/cluster_10_Result_File.png "cluster10 Result File Showing First Class")
 
@@ -242,13 +242,13 @@ The spectral signature file is another piece of information to an analyst that m
 
 With the clustering complete, we can now move on to the second step of the unsupervised classification: running the i.maxlik tool.
 
-13. Click Imagery->Classify Image->Maximum likelihood classification (MLC) [i.maxlik].  This will open the MLC tool.
+13. Click Imagery | Classify Image | Maximum likelihood classification (MLC) [i.maxlik].  This will open the MLC tool.
 14. Click the ‘Manual’ tab and read the manual for the MLC tool.  When you are done reading the manual, proceed to the next step.
 15. Click ‘Required’ tab and set the following options:  
-	+ Name of input imagery group: tm_sacsub_group@Classification  
-	+ Name of input imagery subgroup: tm_sacsub_group  
+	+ Name of input imagery group: tm\_sacsub\_group@Classification  
+	+ Name of input imagery subgroup: tm\_sacsub\_group  
 	+ Name of file containing signatures: cluster10  
-	+ Name for raster map holding classification results: tm_sacsub_un_sup_class  
+	+ Name for raster map holding classification results: tm\_sacsub\_un\_sup\_class  
 	+ Add created map(s) into layer tree: checked  
 16. Click ‘Run’ to execute the MLC tool. 
 17. Check the Command output for errors.  If none exist, click ‘Close’ to close the MLC tool.
@@ -265,14 +265,14 @@ The resulting image (which represent spectral classes) was created without much 
 
 + Look at the obvious.
 
-Water often times is represented as a single class or maybe two classes.  To make it easier for us to understand what the classes are representing, let’s add a color composite of tm_sacsub to the map display for comparison purposes.
+Water often times is represented as a single class or maybe two classes.  To make it easier for us to understand what the classes are representing, let’s add a color composite of tm\_sacsub to the map display for comparison purposes.
 
-1. Click Raster->Manage colors->Create RGB [r.composite]. This will open the composite tool.
+1. Click Raster | Manage colors | Create RGB [r.composite]. This will open the composite tool.
 2. Set the following options (shown in Figure 11):  
-	+ Name of raster map to be used for <red>: tm_sacsub.3@Classification  
-	+ Name of raster map to be used for <green>: tm_sacsub.2@Classification  
-	+ Name of raster map to be used for <blue>: tm_sacsub.1@Classification  
-	+ Name for output raster map: tm_sacsub_RGB  
+	+ Name of raster map to be used for <red>: tm\_sacsub.3@Classification  
+	+ Name of raster map to be used for <green>: tm\_sacsub.2@Classification  
+	+ Name of raster map to be used for <blue>: tm\_sacsub.1@Classification  
+	+ Name for output raster map: tm\_sacsub\_RGB  
 	+ Add created map(s) into layer tree: checked
 3. Click ‘Run’ to execute the composite tool.
 
@@ -280,12 +280,12 @@ Water often times is represented as a single class or maybe two classes.  To mak
 
 4. If no errors are shown in the Command output, click ‘Close’ to close the tool.
 5. View the Map Display.  Note that you can now see the true color composite.  Let’s have it draw underneath the classification image.
-6. In the Layer Manager, drag tm_sacsub_un_sup_class above tm_sacsub_RGB to rearrange the draw order.  You should now see the classified image in the Map Display.
+6. In the Layer Manager, drag tm\_sacsub\_un\_sup\_class above tm\_sacsub\_RGB to rearrange the draw order.  You should now see the classified image in the Map Display.
 7. Toggle the visibility of the classified image by checking and unchecking the checkbox next to the layer name in the Layer Manager.  While toggling the visibility, determine which color represents the water features.
 
 Now that you have identified which color represents water (yellow in our example’s case (see the figure above of cluster10 Result File Showing First Class), let’s determine which class in the raster represents water.
 
-8. In the Layer Manager, select tm_sacsub_un_sup_class, then in the Map Display, click ‘Query raster/vector maps’ button  .
+8. In the Layer Manager, select tm\_sacsub\_un\_sup\_class, then in the Map Display, click ‘Query raster/vector maps’ button  .
 9. Click on a cell in the Map Display that represents water features.  
 10. Open the Command console tab on the Layer Manager.  This will display the results of our query.  In our case, Class 1 represents water features (shown in the figure below).
 
@@ -293,13 +293,13 @@ Now that you have identified which color represents water (yellow in our example
 
 Now that we know that Class 1 represents water features, let’s only apply a color to that class to easily see where water was identified.
 
-11. Click Raster->Manage colors->Color tables [r.colors].  This will open the color tables tool.
+11. Click Raster | Manage colors | Color tables [r.colors].  This will open the color tables tool.
 12. Click on the Manual tab and read the following sections:  
 	+ Name  
 	+ Description  
 	+ Examples
 13. Click ‘Required’ tab.  
-14. Set ‘Name of input raster map’ to tm_sacsub_un_sup_class.
+14. Set ‘Name of input raster map’ to tm\_sacsub\_un\_sup\_class.
 15. Click ‘Colors’ tab.
 16. In ‘or enter values interactively’, enter:  
 1 yellow  
@@ -323,12 +323,12 @@ Now that we know that Class 1 represents water, let’s re-colorize all classes,
 18. Using the r.color tool opened in Step 1 above, clear the ‘or enter values interactively’ values on the ‘Colors’ tab.
 19. For ‘Type of color table’, choose ‘rainbow’.  This will revert the classified image back to its original colors.
 20. Click ‘Close’ to close the r.color tool.
-21. Click Raster->Change category values and labels->Reclassify [r.reclass].
+21. Click Raster | Change category values and labels | Reclassify [r.reclass].
 22. Click on the ‘Manual’ tab and read the manual to understand what this tool does.
 23. Set the following options:  
 	+ Required tab  
-		+ Raster map to be reclassified: tm_sacsub_un_sup_class  
-		+ Name for output raster map: tm_sacsub_un_sup_class_reclass  
+		+ Raster map to be reclassified: tm\_sacsub\_un\_sup\_class  
+		+ Name for output raster map: tm\_sacsub\_un\_sup\_class\_reclass  
 		+ Add created map(s) into layer tree: checked
 	+ Optional tab (shown in Figure 14)
 		+ Or enter values interactively:  
@@ -342,7 +342,7 @@ Now that we know that Class 1 represents water, let’s re-colorize all classes,
 
 You probably noticed that the newly added reclassified layer looks exactly the same as the original raster.  That is normal.  What has changed is the class label.  Let’s see what changed.
 
-26. In the Layer Manager, select tm_sacsub_un_sup_class_reclass, then in the Map   Display, click ‘Query raster/vector maps’ button ![Query raster/vector maps' button](figures/Query_raster_vector_maps'_button.png "Query raster/vector maps' button").
+26. In the Layer Manager, select tm\_sacsub\_un\_sup\_class\_reclass, then in the Map   Display, click ‘Query raster/vector maps’ button ![Query raster/vector maps' button](figures/Query_raster_vector_maps'_button.png "Query raster/vector maps' button").
 27. Click on a Water feature cell then inspect the Command console to see what was returned (shown in the figure below).
 
 ![Reclassified Class 1](figures/Reclassified_Class_1.png "Reclassified Class 1")
@@ -378,4 +378,4 @@ This completes the unsupervised classification process.  Students have learned h
 
 1. Submit the 10 class land types you assigned in Task 5 **highlighted above**.
 2. When working on assigning the 10 land types to the 10 classes in Task 5, **highlighted above**, briefly summarize the observations discovered when assigning the land types.
-3. Find, learn, and use the i.historgram tool on the reclassified raster.  Describe what the historgram is displaying and how it might be a useful visualization for interpreting the classification results.
+3. Find, learn, and use the i.histogram tool on the reclassified raster.  Describe what the histogram is displaying and how it might be a useful visualization for interpreting the classification results.
