@@ -263,6 +263,8 @@ The NULL cells will now be transparent and the two raster maps will be displayed
 
 In this task, we will perform the second step of a supervised classification.  In this step, we will first generate and review the spectral signatures of the training areas that we specified in the Task 3.  Next, we will perform the supervised classification and review the results.  Let’s start with generating the spectral signatures.
 
+### Task 4 Perform Supervised Classification
+
 1.	Click Imagery->Classify image->Input for supervised MLC (i.gensig) on the Layer Manager window.  This will open the i.gensig tool.
 2.	Read the manual for the i.gensig tool to learn what it does and what parameters it expects.
 3.	Set the following parameters for the i.gensig tool:  
