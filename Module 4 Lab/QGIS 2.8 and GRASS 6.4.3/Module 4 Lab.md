@@ -113,9 +113,11 @@ The GCP table will contain a list of all control points that you created.  If yo
 
 ### Task 3 – Rectify the Image
 
-Now that you have your control points set, we will move on to rectifying the image to the selected control points. 
+Now that you have your control points set, we will move on to rectifying the image to the selected control points.
+
 1. To perform the rectification click the Start georeferencing button ![Start georeferencing button ](figures/Start_georeferencing_button.png "Start georeferencing button") in the Georeferencer window.
-2. The Transformation settings window will open (see figure below). If beforehand you get a message saying ‘Please set transformation type' click OK. 
+2. The Transformation settings window will open (see figure below). If beforehand you get a message saying ‘Please set transformation type' click OK.
+
 	+ In the Transformation window choose the Polynomial 1 as the Transformation type.
 	+ Choose Nearest neighbour as the Resampling method. This is the standard raster resampling method for discrete data such as a scanned map. 
 	+ Click the browse button to the right of Output raster. Navigate to your Lab Folder and name the file SAC1\_CIR\_modified\_spcs.tif.
@@ -123,7 +125,7 @@ Now that you have your control points set, we will move on to rectifying the ima
 	+ Click OK to set the CRS.
 	+ Check ‘Load in QGIS when done’.
 	+ Click OK to perform the rectification.
- 
+
 ![Transformation Settings](figures/Transformation_Settings.png "Transformation Settings")
 
 When the rectification is performed, two things will happen. First, the rectified image will be added to the QGIS map canvas relative to the selected ground control points.  This is shown in the figure below.
